@@ -53,7 +53,7 @@ subtitle:
     smartBackspace: false       # 智能退格，只删除不同的部分
   text: "记录，思考，分享"        # 当 typing.enable = false 时使用
 
-banner: "images/banner-star.webp" # 用户提供：蓝色星空城市夜景
+banner: "images/banner-ocean.png" # 用户选定：深海星空调色盘
 # You can also write it in the form of the following url
 # banner: "https://example.com"
 
@@ -653,7 +653,13 @@ home_categories:
 # Make sure your code snippet is safeHTML
 injector:
   head_begin: # Inject code snippet right after <head>
-  head_end: # Inject code snippet right before </head>
+  head_end: |
+    <style>
+      /* 横幅图垂直位置：数值越小越往下（0% 显示图片顶部，100% 显示底部，默认 50%） */
+      #header > picture img {
+        object-position: center 0%;
+      }
+    </style>
   body_begin: # Inject code snippet right after <body>
   body_end: # Inject code snippet right before </body>
   sidebar_begin: # Inject code snippet right after <aside>
