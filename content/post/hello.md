@@ -1,8 +1,9 @@
 ---
 title: 'Hello World'
-
-date: 2023-03-15T11:00:00-07:00
-lastmod: 2023-03-15T11:00:00-07:00
+date: 2026-09-08T19:55:00+08:00
+lastmod: 2026-09-08T19:55:00+08:00
+banner: "images/cover-hello.webp"
+cover: "images/cover-hello.webp"
 ---
 
-💘 博麗 霊夢 💘
+Hello world!
