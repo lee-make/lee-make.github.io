@@ -30,7 +30,7 @@ monthFormat: "2006-01"
 dateFormat: "2006-01-02"
 timeFormat: "2006-01-02 15:04:05"
 
-author: lee-make
+author: brandonlee
 email: xxx@example.com
 description: "记录，思考，分享"
 # subtitle: "少女祈祷中..."
@@ -217,7 +217,7 @@ triangle_badge:
 anchor_icon: # default use '#' icon, you can use a hexadecimal representation of fontawesome or icon_font, like 'f0c1', you can also use false to hide anchor icon
 
 reimu_cursor:
-  enable: true # 用户要求：鼠标指针之后再改
+  enable: false # 关闭灵梦主题的二次元光标，改用系统默认指针
   cursor:
     default: ../images/cursor/reimu-cursor-default.png  # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
     pointer: ../images/cursor/reimu-cursor-pointer.png
