@@ -439,12 +439,12 @@ gitalk:
 
 # https://giscus.app/zh-CN
 giscus:
-  enable: false
-  repo:
-  repoId:
-  category:
-  categoryId:
-  mapping: mapping
+  enable: true
+  repo: lee-make/lee-make.github.io
+  repoId: R_kgDOUR4WGg
+  category: Comments
+  categoryId: DIC_kwDOUR4WGs4DFJYC
+  mapping: pathname
   strict: 0
   reactionsEnabled: 1
   emitMetadata: 0
