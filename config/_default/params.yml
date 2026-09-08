@@ -53,7 +53,7 @@ subtitle:
     smartBackspace: false       # 智能退格，只删除不同的部分
   text: "记录，思考，分享"        # 当 typing.enable = false 时使用
 
-banner: false # 暂不使用横幅图，等用户提供自定义图片后再改回图片路径
+banner: "images/banner-star.webp" # 用户提供：蓝色星空城市夜景
 # You can also write it in the form of the following url
 # banner: "https://example.com"
 
@@ -68,7 +68,7 @@ banner_srcset:
     - src: "images/banner.webp"
       media: "(min-width: 800px)"
 
-avatar: "avatar.webp"
+avatar: "avatar.jpg" # 用户提供，位于 static/avatar/avatar.jpg
 
 # Control the display of the post cover
 # If not set, the banner image will be displayed by default
