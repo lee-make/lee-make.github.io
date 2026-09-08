@@ -217,7 +217,7 @@ triangle_badge:
 anchor_icon: # default use '#' icon, you can use a hexadecimal representation of fontawesome or icon_font, like 'f0c1', you can also use false to hide anchor icon
 
 reimu_cursor:
-  enable: false # 关闭灵梦主题鼠标指针（女性化元素，且需加载 3 张光标图）
+  enable: true # 用户要求：鼠标指针之后再改
   cursor:
     default: ../images/cursor/reimu-cursor-default.png  # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
     pointer: ../images/cursor/reimu-cursor-pointer.png
@@ -499,8 +499,8 @@ algolia_search:
 preloader:
   enable: true
   text:
-    zh-CN: 加载中...
-    zh-TW: 載入中...
+    zh-CN: 正在加载中
+    zh-TW: 正在載入中
     en: Loading...
     ja: 読み込み中...
     pt-BR: Carregando...
@@ -535,7 +535,7 @@ animation:
 
 # see https://github.com/D-Sketon/mouse-firework
 firework:
-  enable: false # 鼠标点击烟花粒子特效，对低配机器开销大，已关闭
+  enable: true # 用户要求：烟花特效暂时不改
   disable_on_mobile: false
   options:
     excludeElements: ["a", "button"]
