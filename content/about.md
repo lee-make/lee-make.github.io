@@ -4,6 +4,8 @@ description: 关于
 
 date: 2022-06-09T20:12:52+08:00
 lastmod: 2022-06-09T20:12:52+08:00
-comments: false # 评论区只在友链页开启；想在关于页也开启就把这行删掉
-
 ---
+
+使用 [hugo-theme-reimu](https://d-sketon.github.io/hugo-theme-reimu/about/) 作为模板，侵权请联系删除。
+
+{{< tagRoulette tags="记录,思考,分享,发呆摸鱼,好想睡觉" >}}
