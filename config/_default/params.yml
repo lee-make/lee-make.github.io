@@ -713,23 +713,63 @@ player:
     # https://github.com/DIYgod/APlayer
     enable: true
     options:
-      audio: []
-      fixed: # 留空：fixed 时播放器不会渲染在侧栏，保持留空才会在侧栏显示
+      # 自建播放列表：音频文件放在 static/music/ 下，换成新歌只需替换文件并改这里
+      audio:
+        - name: 堕
+          artist: 巨礁Focus / Char / -Gwen
+          url: /music/01.mp3
+        - name: 感官过载
+          artist: 残像音阶 / M3mo
+          url: /music/02.wav
+        - name: 露珠
+          artist: 子弥
+          url: /music/03.mp3
+        - name: Towards the Light
+          artist: Jacoo
+          url: /music/04.mp3
+        - name: Lifeline
+          artist: Zeraphym 六翼使徒
+          url: /music/05.mp3
+        - name: 秋色
+          artist: 463XIII
+          url: /music/06.mp3
+        - name: 空心人札记
+          artist: Calia-林焰 / 星尘
+          url: /music/07.mp3
+        - name: 与花逝去的我
+          artist: 归尘回梦
+          url: /music/08.mp3
+        - name: 夏日尽头的我们
+          artist: 命运结构 / 诗岸
+          url: /music/09.mp3
+        - name: 落点
+          artist: 王子健
+          url: /music/10.mp3
+        - name: 反乌托邦
+          artist: 乌托邦P
+          url: /music/11.mp3
+        - name: 反乌托邦Pt.2
+          artist: 亞細亞曠世奇才 / 洛天依 / 乌托邦P
+          url: /music/12.mp3
+        - name: Montagem pitty
+          artist: 见过夏天P / 洛天依
+          url: /music/13.mp3
+      fixed: false # 必须为假值，否则播放器不会渲染在侧栏（sidebar.html 里有 not fixed 判断）
       autoplay:
       loop: all
       order: random
-      preload: auto
+      preload: metadata # 不用 auto，避免一次性预载多首大文件
       volume: 0.7
       mutex:
       listFolded:
       lrcType:
   meting:
     # https://github.com/metowolf/MetingJS
-    # if you want to use meting, please enable aplayer first
-    enable: true
-    meting_api: # custom api，留空则使用 MetingJS 自带接口；若歌单加载不出来，可换成 https://api-meting.imsyy.top/api
+    # 已改为自建播放列表（static/music/），不再依赖第三方接口
+    enable: false
+    meting_api:
     options:
-      id: 2265921590 # 网易云歌单 ID，换成自己的即可
+      id: 18366985592
       server: netease
       type: playlist
       auto:
