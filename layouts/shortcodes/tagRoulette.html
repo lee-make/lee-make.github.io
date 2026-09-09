@@ -1,0 +1,76 @@
+<!--
+    站点层覆盖 themes/reimu/layouts/shortcodes/tagRoulette.html（主题升级时如需同步请对照原文件）
+    相比主题原版新增两个参数：
+      default  → 页面加载时默认显示的文案（原版默认是空标签且一进页面就自动滚动）
+      rainbow  → 命中该文案时使用炫彩渐变（隐藏款）
+-->
+
+{{- $inputTags := .Get "tags" | default "点击按钮抽取标签,标签轮盘,带有模糊效果,好想睡觉" -}}
+{{- $icon := .Get "icon" | default "🕹️" -}}
+{{- $defaultText := .Get "default" | default "" -}}
+{{- $rainbowText := .Get "rainbow" | default "" -}}
+
+<div class="roll">
+    <div class="roll-button" onclick="rollTagRoulette()">{{ $icon }}</div>
+    <div class="roll-tags"><span class="ready">{{ $defaultText }}</span></div>
+</div>
+
+<style>
+.roll-tags span.rainbow {
+  background-image: linear-gradient(
+    90deg,
+    #ff4d4f, #ff9f1a, #ffd23f, #2ec4b6, #4d8bff, #a05cff, #ff4dff, #ff4d4f
+  );
+  background-size: 400% 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 700;
+  animation: roll-rainbow 4s linear infinite;
+  filter: drop-shadow(0 0 6px rgba(255, 130, 190, 0.35));
+}
+
+@keyframes roll-rainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+</style>
+
+<script>
+var rollTagRoulette = () => {
+    var tags = {{ $inputTags }}.split(",");
+    var rainbowText = {{ $rainbowText }};
+    var tag = document.querySelector('.roll-tags');
+    tag.innerHTML = '';
+
+    var interval = setInterval(function () {
+        var span = document.createElement('span');
+        span.classList.add('ready');
+        span.classList.add('blur');
+        span.innerText = tags[Math.floor(Math.random() * tags.length)];
+        if (rainbowText && span.innerText === rainbowText) {
+            span.classList.add('rainbow');
+        }
+        tag.appendChild(span);
+        spans = tag.querySelectorAll('span');
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].classList.add('removing');
+        }
+    }, 200);
+
+    setTimeout(function () {
+        clearInterval(interval);
+        for (var i = 0; i < spans.length - 1; i++) {
+            tag.removeChild(spans[i]);
+        }
+        var last = spans[spans.length - 1];
+        if (last) {
+            setTimeout(function () {
+                last.classList.remove('blur');
+            }, 100);
+        }
+    }, 1000);
+};
+</script>
+
+{{- partial "helpers/scss.html" (dict "source" "css/tag-roulette.scss" "temp" "tag-roulette.scss" "target" "css/tag-roulette.css" "ctx" . "async" true) -}}
