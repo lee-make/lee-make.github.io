@@ -659,6 +659,12 @@ injector:
   head_begin: # Inject code snippet right after <head>
   head_end: |
     <style>
+      /* 自定义蓝色鼠标指针：覆盖主题 --cursor-* 变量，SVG 作 data URI 不需要 PNG */
+      :root {
+        --cursor-default: url('/images/cursor/default.svg') 12 12, auto;
+        --cursor-pointer: url('/images/cursor/pointer.svg') 3 2, pointer;
+        --cursor-text:    url('/images/cursor/text.svg') 12 12, text;
+      }
       /* 横幅图垂直位置：数值越小越往下（0% 显示图片顶部，100% 显示底部，默认 50%） */
       #header > picture img {
         object-position: center 0%;
