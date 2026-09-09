@@ -718,42 +718,55 @@ player:
         - name: 堕
           artist: 巨礁Focus / Char / -Gwen
           url: /music/01.mp3
+          cover: /music/covers/01.jpg
         - name: 感官过载
           artist: 残像音阶 / M3mo
           url: /music/02.wav
+          cover: /music/covers/02.jpg
         - name: 露珠
           artist: 子弥
           url: /music/03.mp3
+          cover: /music/covers/03.jpg
         - name: Towards the Light
           artist: Jacoo
           url: /music/04.mp3
+          cover: /music/covers/04.jpg
         - name: Lifeline
           artist: Zeraphym 六翼使徒
           url: /music/05.mp3
+          cover: /music/covers/05.jpg
         - name: 秋色
           artist: 463XIII
           url: /music/06.mp3
+          cover: /music/covers/06.jpg
         - name: 空心人札记
           artist: Calia-林焰 / 星尘
           url: /music/07.mp3
+          cover: /music/covers/07.jpg
         - name: 与花逝去的我
           artist: 归尘回梦
           url: /music/08.mp3
+          cover: /music/covers/08.jpg
         - name: 夏日尽头的我们
           artist: 命运结构 / 诗岸
           url: /music/09.mp3
+          cover: /music/covers/09.jpg
         - name: 落点
           artist: 王子健
           url: /music/10.mp3
+          cover: /music/covers/10.jpg
         - name: 反乌托邦
           artist: 乌托邦P
           url: /music/11.mp3
+          cover: /music/covers/11.jpg
         - name: 反乌托邦Pt.2
           artist: 亞細亞曠世奇才 / 洛天依 / 乌托邦P
           url: /music/12.mp3
+          cover: /music/covers/12.jpg
         - name: Montagem pitty
           artist: 见过夏天P / 洛天依
           url: /music/13.mp3
+          cover: /music/covers/13.jpg
       fixed: false # 必须为假值，否则播放器不会渲染在侧栏（sidebar.html 里有 not fixed 判断）
       autoplay:
       loop: all
