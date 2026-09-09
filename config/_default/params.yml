@@ -662,6 +662,14 @@ injector:
       #header > picture img {
         object-position: center 0%;
       }
+      /* 音乐播放器：隐藏歌曲列表与列表开关，只保留单个播放器 */
+      .aplayer .aplayer-list,
+      .aplayer .aplayer-icon-menu {
+        display: none !important;
+      }
+      .aplayer.aplayer-withlist .aplayer-info {
+        border-bottom: none !important;
+      }
     </style>
   body_begin: # Inject code snippet right after <body>
   body_end: # Inject code snippet right before </body>
@@ -721,7 +729,7 @@ player:
           cover: /music/covers/01.jpg
         - name: 感官过载
           artist: 残像音阶 / M3mo
-          url: /music/02.wav
+          url: /music/02.mp3
           cover: /music/covers/02.jpg
         - name: 露珠
           artist: 子弥
@@ -770,11 +778,11 @@ player:
       fixed: false # 必须为假值，否则播放器不会渲染在侧栏（sidebar.html 里有 not fixed 判断）
       autoplay:
       loop: all
-      order: random
+      order: random # 每次进入页面随机抽一首开始播
       preload: metadata # 不用 auto，避免一次性预载多首大文件
       volume: 0.7
       mutex:
-      listFolded:
+      listFolded: true # 列表已用 CSS 隐藏，这里折叠作为兜底
       lrcType:
   meting:
     # https://github.com/metowolf/MetingJS
