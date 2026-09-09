@@ -5,21 +5,22 @@
 # main menu navigation
 # for more icon information, please visit https://github.com/D-Sketon/hexo-theme-reimu/issues/30
 menu:
+  # 图标用 static/images/icons/*.svg（内联渲染，颜色跟随主题蓝 --red-0；深色模式自动变浅）
   - name: home
     url: ""
-    icon: # default use taichi icon, you can use a hexadecimal representation of fontawesome or icon_font, like 'f0c1'
+    icon: "images/icons/home.svg"
   - name: archives
     url: "archives"
-    icon:
+    icon: "images/icons/archives.svg"
   - name: about
     url: "about"
-    icon:
+    icon: "images/icons/about.svg"
   - name: friend
     url: "friend"
-    icon:
+    icon: "images/icons/friend.svg"
   - name: search
     url: "search"
-    icon: "images/search.svg" # data: URI 会被 Hugo 的 safeURL 拦掉，必须用文件
+    icon: "images/icons/search.svg"
 
 # friend links
 friends:
@@ -661,6 +662,13 @@ injector:
       /* 横幅图垂直位置：数值越小越往下（0% 显示图片顶部，100% 显示底部，默认 50%） */
       #header > picture img {
         object-position: center 0%;
+      }
+      /* 导航图标：内联 SVG 跟随主题蓝（currentColor），这里只定尺寸 */
+      .main-nav-icon svg {
+        width: 1em;
+        height: 1em;
+        display: block;
+        overflow: visible;
       }
       /* 音乐播放器：隐藏歌曲列表与列表开关，只保留单个播放器 */
       .aplayer .aplayer-list,
