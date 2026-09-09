@@ -1,0 +1,9 @@
+{{- /* 导航图标统一走这里：static/ 下的 SVG 内联渲染（currentColor 可跟随主题色），否则退回 <img> */ -}}
+{{- $icon := .icon -}}
+{{- $name := .name -}}
+{{- $svgPath := printf "static/%s" $icon -}}
+{{- if fileExists $svgPath -}}
+  {{- readFile $svgPath | safeHTML -}}
+{{- else -}}
+  <img src="{{ $icon | relURL }}" alt="{{ $name }} icon" class="" style="height: 1em;">
+{{- end -}}

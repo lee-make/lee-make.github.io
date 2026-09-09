@@ -664,11 +664,16 @@ injector:
         object-position: center 0%;
       }
       /* 导航图标：内联 SVG 跟随主题蓝（currentColor），这里只定尺寸 */
-      .main-nav-icon svg {
+      .main-nav-icon svg,
+      .sidebar-menu-icon svg {
         width: 1em;
         height: 1em;
         display: block;
         overflow: visible;
+      }
+      /* 侧栏选中项：背景变蓝时图标和文字一起变白 */
+      .link-active .sidebar-menu-icon {
+        color: #fff;
       }
       /* 音乐播放器：隐藏歌曲列表与列表开关，只保留单个播放器 */
       .aplayer .aplayer-list,

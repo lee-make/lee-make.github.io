@@ -7,13 +7,7 @@
           <div class='main-nav-icon icon {{ if or (and (eq .icon "e62b") ($params.icon_font)) (and (eq .icon "f6ad") (not $params.icon_font)) (not .icon) }}rotate{{ end }}'>
             {{- if .icon -}}
               {{- if and (strings.Contains .icon ".") (strings.Contains .icon "/") -}}
-                {{- $svgPath := printf "static/%s" .icon -}}
-                {{- if fileExists $svgPath -}}
-                  {{/* 内联 SVG：这样图标能用 currentColor 跟随主题蓝（--red-0），深色模式自动变浅蓝 */}}
-                  {{- readFile $svgPath | safeHTML -}}
-                {{- else -}}
-                  <img src="{{ .icon | relURL }}" alt="{{ .name }} icon" class="" style="height: 1em;">
-                {{- end -}}
+                {{- partial "helpers/menu-icon.html" (dict "icon" .icon "name" .name) -}}
               {{- else -}}
                 &#x{{- .icon -}};
               {{- end -}}
