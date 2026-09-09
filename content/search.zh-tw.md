@@ -77,7 +77,8 @@ comments: false
   var list = document.getElementById('local-search-result');
   if (!input) return;
 
-  var base = location.pathname.indexOf('/zh-tw') === 0 ? '/zh-tw/' : '/';
+  var m = location.pathname.match(/^\/(zh-tw|en)\//);
+  var base = m ? '/' + m[1] + '/' : '/';
   var posts = [];
   var timer = null;
 

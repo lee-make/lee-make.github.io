@@ -1,6 +1,6 @@
 ---
-title: 搜索
-description: 站内搜索
+title: Search
+description: Search this site
 
 date: 2026-09-09T12:00:00+08:00
 lastmod: 2026-09-09T12:00:00+08:00
@@ -8,7 +8,7 @@ comments: false
 ---
 
 <div class="local-search">
-  <input id="local-search-input" type="search" placeholder="输入关键词，回车搜索…" autocomplete="off" />
+  <input id="local-search-input" type="search" placeholder="Type a keyword and press Enter…" autocomplete="off" />
   <p id="local-search-tip"></p>
   <ul id="local-search-result"></ul>
 </div>
@@ -86,10 +86,10 @@ comments: false
     .then(function (r) { return r.json(); })
     .then(function (data) {
       posts = data || [];
-      tip.textContent = '已索引 ' + posts.length + ' 篇文章';
+      tip.textContent = 'Indexed ' + posts.length + ' posts';
     })
     .catch(function () {
-      tip.textContent = '索引加载失败';
+      tip.textContent = 'Failed to load index';
     });
 
   function escapeHtml(s) {
@@ -115,13 +115,13 @@ comments: false
   function render(kw) {
     var k = kw.trim();
     list.innerHTML = '';
-    if (!k) { tip.textContent = '已索引 ' + posts.length + ' 篇文章'; return; }
+    if (!k) { tip.textContent = 'Indexed ' + posts.length + ' posts'; return; }
 
     var hits = posts.filter(function (p) {
       return (p.title + (p.desc || '') + (p.content || '')).toLowerCase().indexOf(k.toLowerCase()) > -1;
     });
 
-    tip.textContent = '找到 ' + hits.length + ' 条结果';
+    tip.textContent = 'Found ' + hits.length + ' results';
     hits.forEach(function (p) {
       var li = document.createElement('li');
       li.innerHTML =
