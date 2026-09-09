@@ -4,3 +4,4 @@
 /resources/_gen/
 Thumbs.db
 build.log
+hugo-server.log
